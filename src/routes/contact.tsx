@@ -12,7 +12,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Kenforest Limited for Hass avocado export enquiries, avocado oil purchase orders and agricultural consultation. Based in Kiambu, Kenya.",
+          "Contact Kenforest Limited for Hass avocado export enquiries, avocado oil purchase orders and agricultural consultation. Based in East Africa.",
       },
       { property: "og:title", content: "Contact — Kenforest Limited" },
       { property: "og:description", content: "Talk to our export desk about Hass avocados, oil and consultation." },
@@ -42,16 +42,16 @@ function Contact() {
               Reach us directly
             </div>
             <h2 className="text-balance text-4xl leading-tight md:text-5xl">
-              Head office · Kiambu, Kenya
+              Head office · East Africa
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              We are located in the heart of Kenya's Hass belt, minutes from
-              Nairobi and a short drive from Jomo Kenyatta International Airport.
-              Farm and packhouse visits are available by appointment.
+              We are based in the heart of East Africa's premium fruit growing
+              region, with easy access to international airports and major
+              export corridors. Farm and packhouse visits are available by appointment.
             </p>
             <ul className="mt-10 space-y-5">
               <ContactRow icon={<MapPin className="h-5 w-5" />} label="Address">
-                Kenforest Limited · P.O. Box 50729, 00232 · Kiambu, Kenya
+                Kenforest Limited · P.O. Box 50729, 00232 · Nairobi, Kenya
               </ContactRow>
               <ContactRow icon={<Mail className="h-5 w-5" />} label="Email">
                 <a href="mailto:kenforestlimited@gmail.com" className="hover:text-primary">

@@ -1,23 +1,24 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Menu, X, MapPin, Mail, Phone, Globe } from "lucide-react";
+
 const logoUrl = "/Logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
   { to: "/products", label: "Products" },
   { to: "/consultation", label: "Consultation" },
-  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
-      <div className="container-x flex h-20 items-center justify-between">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-md">
+      <div className="container-x flex h-24 items-center justify-between">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logoUrl} alt="Kenforest Limited" className="h-12 w-auto" />
+          <img src={logoUrl} alt="Kenforest Limited" className="h-20 w-auto" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((l) => (
@@ -82,12 +83,26 @@ export function SiteFooter() {
           <img
             src={logoUrl}
             alt="Kenforest Limited"
-            className="h-14 w-auto brightness-0 invert"
+            className="h-20 w-auto brightness-0 invert"
           />
           <p className="mt-6 max-w-sm text-sm text-white/70">
             Nurturing Nature. Sustaining Future. Growing, processing and exporting
-            premium Kenyan Hass avocados and cold-pressed avocado oil to the world.
+            premium East African avocados and cold-pressed oils to the world.
           </p>
+          <div className="mt-6 flex gap-3">
+            <a
+              href="mailto:kenforestlimited@gmail.com"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs text-white/80 transition hover:bg-white/10"
+            >
+              <Mail className="h-3.5 w-3.5" /> Email us
+            </a>
+            <a
+              href="tel:+254711281829"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs text-white/80 transition hover:bg-white/10"
+            >
+              <Phone className="h-3.5 w-3.5" /> Call us
+            </a>
+          </div>
         </div>
         <div>
           <div className="mb-4 text-xs uppercase tracking-[0.2em] text-accent">
@@ -108,7 +123,7 @@ export function SiteFooter() {
             Contact
           </div>
           <ul className="space-y-3 text-sm text-white/80">
-            <li className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> P.O. Box 50729, 00232, Kiambu, Kenya</li>
+            <li className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> P.O. Box 50729, 00232, Nairobi, Kenya</li>
             <li className="flex gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><a href="tel:+254711281829" className="hover:text-white">+254 711 281 829</a></li>
             <li className="flex gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><a href="mailto:kenforestlimited@gmail.com" className="hover:text-white">kenforestlimited@gmail.com</a></li>
             <li className="flex gap-2"><Globe className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><a href="https://www.kenforestlimited.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">www.kenforestlimited.com</a></li>
@@ -154,7 +169,7 @@ export function PageHero({
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/80 via-primary/50 to-background" />
-      <div className="container-x flex min-h-[52vh] flex-col justify-end pb-16 pt-28 text-primary-foreground">
+      <div className="container-x flex min-h-[56vh] flex-col justify-end pb-16 pt-28 text-primary-foreground">
         <div className="mb-4 text-xs uppercase tracking-[0.25em] text-accent">
           {eyebrow}
         </div>

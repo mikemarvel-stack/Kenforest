@@ -12,6 +12,9 @@ import {
   Truck,
   Factory,
   TreeDeciduous,
+  TrendingUp,
+  Users,
+  Zap,
 } from "lucide-react";
 
 import { PageShell } from "@/components/site/SiteLayout";
@@ -26,14 +29,14 @@ import singleImg from "@/assets/single-avocado.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kenforest Limited — Premium Kenyan Hass Avocado Export & Oil" },
+      { title: "Kenforest Limited — Premium East African Avocado Export & Oil" },
       {
         name: "description",
         content:
-          "Kenforest Limited grows, processes and exports GlobalG.A.P. certified Hass avocados and cold-pressed avocado oil from Kiambu, Kenya to Europe, the Middle East and Asia.",
+          "Kenforest Limited grows, processes and exports GlobalG.A.P. certified avocados and cold-pressed avocado oil from East Africa to Europe, the Middle East and Asia.",
       },
-      { property: "og:title", content: "Kenforest Limited — Premium Kenyan Hass Avocados" },
-      { property: "og:description", content: "Export-grade Hass avocados, cold-pressed avocado oil and agricultural consultation from East Africa." },
+      { property: "og:title", content: "Kenforest Limited — Premium East African Avocados" },
+      { property: "og:description", content: "Export-grade avocados, cold-pressed avocado oil and agricultural consultation from East Africa." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -50,7 +53,7 @@ export const Route = createFileRoute("/")({
           address: {
             "@type": "PostalAddress",
             streetAddress: "P.O. Box 50729, 00232",
-            addressLocality: "Kiambu",
+            addressLocality: "Nairobi",
             addressCountry: "KE",
           },
         }),
@@ -66,6 +69,7 @@ function Home() {
       <Hero />
       <TrustStrip />
       <Intro />
+      <WhyEastAfrica />
       <ProductsOverview />
       <Markets />
       <ProcessTimeline />
@@ -83,7 +87,7 @@ function Hero() {
     <section className="relative isolate overflow-hidden">
       <img
         src={heroImg}
-        alt="Kenyan Hass avocado orchard at golden hour"
+        alt="East African avocado orchard at golden hour"
         width={1920}
         height={1280}
         className="absolute inset-0 -z-10 h-full w-full object-cover"
@@ -93,16 +97,16 @@ function Hero() {
         <div className="max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-white/90 backdrop-blur">
             <Leaf className="h-3.5 w-3.5 text-accent" />
-            Hass Avocados · East Africa
+            Premium Avocado Export · East Africa
           </div>
           <h1 className="text-balance text-5xl leading-[1.05] text-white sm:text-6xl md:text-7xl">
-            The green gold of
+            East Africa's finest avocados,
             <br />
-            <span className="text-accent">the Kenyan highlands.</span>
+            <span className="text-accent">delivered to the world.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/85">
-            Kenforest Limited grows, cold-presses and exports premium Hass
-            avocados and extra-virgin avocado oil from Kiambu, Kenya —
+            Kenforest Limited sources, processes and exports premium avocados
+            and cold-pressed oils from the highlands of East Africa —
             partnering with buyers across Europe, the Middle East and Asia.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -128,7 +132,7 @@ function Hero() {
 function TrustStrip() {
   const stats = [
     { k: "18+", v: "Export markets served" },
-    { k: "2,400 T", v: "Annual Hass capacity" },
+    { k: "2,400 T", v: "Annual avocado capacity" },
     { k: "1,600+", v: "Contracted smallholders" },
     { k: "GG.A.P.", v: "Certified operations" },
   ];
@@ -155,7 +159,7 @@ function Intro() {
         <div className="relative">
           <img
             src={singleImg}
-            alt="Fresh Hass avocado on the branch"
+            alt="Fresh avocado on the branch"
             width={1280}
             height={1280}
             loading="lazy"
@@ -163,9 +167,9 @@ function Intro() {
           />
           <div className="absolute -bottom-6 -right-4 hidden max-w-xs rounded-2xl border border-border bg-card p-6 shadow-lg md:block">
             <div className="text-xs uppercase tracking-widest text-accent">Origin</div>
-            <div className="mt-1 font-display text-lg">Kiambu Highlands, 1,900m</div>
+            <div className="mt-1 font-display text-lg">East African Highlands, 1,900m</div>
             <div className="mt-1 text-sm text-muted-foreground">
-              Cool nights, volcanic soils, unmistakable creamy Hass.
+              Cool nights, volcanic soils, world-class avocados.
             </div>
           </div>
         </div>
@@ -174,18 +178,18 @@ function Intro() {
             Who we are
           </div>
           <h2 className="text-balance text-4xl leading-tight md:text-5xl">
-            An East African avocado house, built on trust and terroir.
+            An East African avocado export house, built on trust and terroir.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            From a network of high-altitude farms in central Kenya, we deliver
-            three things exceptionally well: <strong className="text-foreground">fresh Hass avocados</strong> to
+            From a network of high-altitude farms across East Africa, we deliver
+            three things exceptionally well: <strong className="text-foreground">fresh export avocados</strong> to
             global retailers, <strong className="text-foreground">cold-pressed avocado oil</strong> to premium food
             and cosmetics brands, and <strong className="text-foreground">agricultural consultation</strong> to
             growers ready to enter the export supply chain.
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             <Pillar icon={<TreeDeciduous className="h-5 w-5" />} title="Highland-grown">
-              1,700–2,100m altitude for firm flesh, long shelf life and 22%+ dry matter.
+              1,700–2,100m altitude for firm flesh, long shelf life and superior dry matter.
             </Pillar>
             <Pillar icon={<ShieldCheck className="h-5 w-5" />} title="Traceable">
               Every carton traces back to farm, block and picking date.
@@ -223,14 +227,68 @@ function Pillar({
   );
 }
 
+/* ---------- Why East Africa ---------- */
+function WhyEastAfrica() {
+  const reasons = [
+    {
+      icon: <TrendingUp className="h-6 w-6" />,
+      title: "Year-round supply",
+      body: "East Africa's equatorial climate and varied altitudes enable staggered harvests across multiple varieties, delivering consistent supply 12 months a year.",
+    },
+    {
+      icon: <Zap className="h-6 w-6" />,
+      title: "Superior quality",
+      body: "High-altitude growing conditions — cool nights, rich volcanic soils and ample rainfall — produce avocados with exceptional oil content, flavour and shelf life.",
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Smallholder network",
+      body: "Over 1,600 contracted growers across Kenya, Uganda and Tanzania give us unmatched sourcing depth and supply resilience across seasons.",
+    },
+    {
+      icon: <Globe2 className="h-6 w-6" />,
+      title: "Strategic location",
+      body: "Positioned between Europe, the Middle East and Asia, East Africa offers competitive freight times and growing trade corridor advantages.",
+    },
+  ];
+  return (
+    <section className="bg-primary/5 py-28">
+      <div className="container-x">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <div className="mb-4 text-xs uppercase tracking-[0.25em] text-accent">
+            Why East Africa
+          </div>
+          <h2 className="text-balance text-4xl leading-tight md:text-5xl">
+            The world's most compelling avocado origin.
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            East Africa is the fastest-growing avocado export region globally — and Kenforest is at its centre.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {reasons.map((r) => (
+            <div key={r.title} className="rounded-2xl border border-border bg-card p-8">
+              <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
+                {r.icon}
+              </div>
+              <h3 className="font-display text-xl text-foreground">{r.title}</h3>
+              <p className="mt-3 text-sm text-muted-foreground">{r.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- Products Overview ---------- */
 function ProductsOverview() {
   const products = [
     {
       img: hassImg,
       tag: "Fresh Fruit",
-      title: "Hass Avocado — Export Grade",
-      body: "Class I & II fresh Hass, harvested at 24–28% dry matter, pre-cooled and shipped by sea in refrigerated 40ft reefers.",
+      title: "Export-Grade Avocados",
+      body: "Multiple varieties — Class I & II, harvested at peak dry matter, pre-cooled and shipped by sea in refrigerated 40ft reefers.",
       href: "/products",
     },
     {
@@ -318,19 +376,19 @@ function Markets() {
             Where we ship
           </div>
           <h2 className="text-balance text-4xl leading-tight md:text-5xl">
-            From Kiambu to eighteen markets across three continents.
+            From East Africa to eighteen markets across three continents.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            We ship weekly through the Port of Mombasa in refrigerated
-            containers, and by air-freight for premium retail and food-service
-            customers. Our sales team handles documentation, phytosanitary
-            clearance and cold-chain from farm gate to destination port.
+            We ship weekly via East African ports in refrigerated containers,
+            and by air-freight for premium retail and food-service customers.
+            Our sales team handles documentation, phytosanitary clearance and
+            cold-chain from farm gate to destination port.
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {markets.map((m) => (
               <div
                 key={m.region}
-                className="rounded-2xl border border-border bg-card p-5"
+                className="rounded-2xl border border-border bg-card p-5 transition hover:border-accent/40 hover:shadow-sm"
               >
                 <div className="flex items-center gap-2 font-display text-lg text-foreground">
                   <Globe2 className="h-4 w-4 text-accent" /> {m.region}
@@ -342,7 +400,7 @@ function Markets() {
         </div>
         <img
           src={exportImg}
-          alt="Hass avocado export boxes loaded for shipping"
+          alt="Avocado export boxes loaded for shipping"
           width={1280}
           height={960}
           loading="lazy"
@@ -356,10 +414,10 @@ function Markets() {
 /* ---------- Process ---------- */
 function ProcessTimeline() {
   const steps = [
-    { n: "01", icon: <Sprout className="h-5 w-5" />, title: "Orchard", body: "Managed Hass blocks at 1,700–2,100m altitude with drip irrigation and integrated pest management." },
+    { n: "01", icon: <Sprout className="h-5 w-5" />, title: "Orchard", body: "Managed avocado blocks at 1,700–2,100m altitude with drip irrigation and integrated pest management." },
     { n: "02", icon: <ClipboardCheck className="h-5 w-5" />, title: "Harvest", body: "Dry-matter tested and hand-picked at optimum maturity for the target destination." },
-    { n: "03", icon: <Factory className="h-5 w-5" />, title: "Packhouse", body: "Pre-cooling, brush washing, size grading (10–30 count) and export cartons within 24 hours." },
-    { n: "04", icon: <Truck className="h-5 w-5" />, title: "Cold chain", body: "Reefer trucks to Mombasa, +5.5°C controlled atmosphere containers to destination port." },
+    { n: "03", icon: <Factory className="h-5 w-5" />, title: "Packhouse", body: "Pre-cooling, brush washing, size grading and export cartons completed within 24 hours." },
+    { n: "04", icon: <Truck className="h-5 w-5" />, title: "Cold chain", body: "Reefer trucks to port, +5.5°C controlled atmosphere containers to destination." },
     { n: "05", icon: <Ship className="h-5 w-5" />, title: "Delivery", body: "Documentation, phytosanitary and customs handled — landed in market ready for ripening." },
   ];
   return (
@@ -377,7 +435,7 @@ function ProcessTimeline() {
           {steps.map((s) => (
             <li
               key={s.n}
-              className="relative rounded-2xl border border-border bg-card p-6"
+              className="relative rounded-2xl border border-border bg-card p-6 transition hover:border-accent/40 hover:shadow-md"
             >
               <div className="mb-4 grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
                 {s.icon}
@@ -418,7 +476,7 @@ function Certifications() {
           {certs.map((c) => (
             <div
               key={c.name}
-              className="rounded-2xl border border-border bg-card p-8 text-center"
+              className="rounded-2xl border border-border bg-card p-8 text-center transition hover:border-accent/40 hover:shadow-md"
             >
               <Award className="mx-auto h-8 w-8 text-accent" />
               <div className="mt-4 font-display text-xl text-foreground">
@@ -436,10 +494,10 @@ function Certifications() {
 /* ---------- Gallery ---------- */
 function FieldGallery() {
   const shots = [
-    { src: heroImg, alt: "Kenyan Hass avocado orchard at golden hour", span: "md:col-span-2 md:row-span-2" },
+    { src: heroImg, alt: "East African avocado orchard at golden hour", span: "md:col-span-2 md:row-span-2" },
     { src: packhouseImg, alt: "Kenforest packhouse operations", span: "" },
-    { src: hassImg, alt: "Fresh Hass avocados in a wooden crate", span: "" },
-    { src: consultationImg, alt: "Agronomist consulting with a Kenyan farmer", span: "md:col-span-2" },
+    { src: hassImg, alt: "Fresh avocados in a wooden crate", span: "" },
+    { src: consultationImg, alt: "Agronomist consulting with an East African farmer", span: "md:col-span-2" },
     { src: oilImg, alt: "Bottle of cold-pressed avocado oil", span: "" },
   ];
   return (
@@ -480,9 +538,9 @@ function Testimonial() {
         <figure className="mx-auto max-w-4xl text-center">
           <Leaf className="mx-auto h-8 w-8 text-accent" />
           <blockquote className="mt-6 font-display text-3xl leading-snug text-foreground md:text-4xl">
-            “Kenforest have been our most consistent East African supplier for
+            "Kenforest have been our most consistent East African supplier for
             three seasons — dry matter on spec, cold chain unbroken, and paperwork
-            that just works. The Kiambu Hass has become a staple in our program.”
+            that just works. Their East African avocados have become a staple in our program."
           </blockquote>
           <figcaption className="mt-8 text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">Lars van der Meer</span> ·
@@ -510,12 +568,20 @@ function CTA() {
             back with pricing, availability and a sample shipment plan within
             two working days.
           </p>
-          <Link
-            to="/contact"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-primary transition hover:brightness-110"
-          >
-            Request a quote <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-primary transition hover:brightness-110"
+            >
+              Request a quote <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              View products
+            </Link>
+          </div>
         </div>
       </div>
     </section>
