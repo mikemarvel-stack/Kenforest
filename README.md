@@ -1,8 +1,43 @@
+<div align="center">
+
+<img src="public/Logo.png" alt="Kenforest Limited" height="80" />
+
 # Kenforest Limited
 
-> **Nurturing Nature. Sustaining Future.**
+**Nurturing Nature. Sustaining Future.**
 
-Official website for **Kenforest Limited** — a Kenya-based avocado grower, processor and exporter headquartered in Kiambu. We grow, cold-press and export premium Hass avocados and extra-virgin avocado oil to buyers across Europe, the Middle East and Asia.
+Official website for Kenforest Limited — a Kenya-based fresh produce grower, processor and exporter. We source, pack and export premium East African avocados, mangoes, passion fruit and macadamia nuts, alongside cold-pressed avocado oil and expert agronomy consultation, to buyers across Europe, the Middle East and Asia.
+
+[![Node](https://img.shields.io/badge/node-%3E%3D22.12.0-brightgreen?logo=node.js)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?logo=tailwindcss)](https://tailwindcss.com)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)](https://vite.dev)
+[![License](https://img.shields.io/badge/license-Proprietary-red)](./LICENSE)
+
+</div>
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Pages](#pages)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [Certifications](#certifications)
+- [Contact](#contact)
+- [License](#license)
+
+---
+
+## Overview
+
+This is the official marketing and enquiry website for **Kenforest Limited**. It is a server-side rendered (SSR) application built with TanStack Start, React 19 and Tailwind CSS v4. The site showcases Kenforest's export produce portfolio, agronomy consultation services, certifications and market reach, and provides a direct enquiry channel for international buyers.
 
 ---
 
@@ -10,11 +45,11 @@ Official website for **Kenforest Limited** — a Kenya-based avocado grower, pro
 
 | Route | Description |
 |---|---|
-| `/` | Home — hero, trust stats, products overview, markets, process timeline, certifications, gallery, testimonial |
-| `/products` | Hass avocado export specs, extra-virgin avocado oil details, private-label offering |
-| `/consultation` | Agronomy services, orchard establishment, GlobalG.A.P. readiness, engagement packages |
+| `/` | Home — hero, trust stats, products overview, export markets, process timeline, certifications, gallery, testimonial, CTA |
+| `/products` | Avocados, mangoes, passion fruit, macadamia specs; cold-pressed avocado oil; private-label offering |
+| `/consultation` | Agronomy services, orchard establishment, GlobalG.A.P. readiness, engagement packages, FAQ |
 | `/about` | Company story, mission, vision, values, sustainability metrics |
-| `/contact` | Head office details, enquiry form |
+| `/contact` | Head office details, enquiry form with confirmation state |
 
 ---
 
@@ -27,20 +62,23 @@ Official website for **Kenforest Limited** — a Kenya-based avocado grower, pro
 | UI | [React 19](https://react.dev) + [Tailwind CSS v4](https://tailwindcss.com) |
 | Components | [Radix UI](https://www.radix-ui.com) primitives via [shadcn/ui](https://ui.shadcn.com) |
 | Data fetching | [TanStack Query](https://tanstack.com/query) |
-| Build tool | [Vite 8](https://vite.dev) + [Rolldown](https://rolldown.rs) |
+| Build tool | [Vite 8](https://vite.dev) |
 | Language | TypeScript 5 (strict mode) |
 | Linting | ESLint 9 + typescript-eslint |
 | Formatting | Prettier |
 | Fonts | Playfair Display (display) · Inter (body) via Fontsource |
+| Deployment | [Vercel](https://vercel.com) (Nitro vercel preset) |
 
 ---
 
 ## Prerequisites
 
-- **Node.js** `>=22.12.0` (required by Vite 8 and TanStack Start)
-- **npm** `>=9`
+| Requirement | Version |
+|---|---|
+| Node.js | `>= 22.12.0` |
+| npm | `>= 9` |
 
-> Use [nvm](https://github.com/nvm-sh/nvm) to manage Node versions:
+> **Tip:** Use [nvm](https://github.com/nvm-sh/nvm) to manage Node versions:
 > ```bash
 > nvm install 22 && nvm use 22
 > ```
@@ -52,7 +90,7 @@ Official website for **Kenforest Limited** — a Kenya-based avocado grower, pro
 ```bash
 # 1. Clone the repository
 git clone https://github.com/mikemarvel-stack/Kenforest.git
-cd kenforest
+cd Kenforest
 
 # 2. Install dependencies
 npm install
@@ -67,64 +105,88 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Available Scripts
 
-```bash
-npm run dev        # Start dev server with HMR
-npm run build      # Production build
-npm run build:dev  # Development build
-npm run preview    # Preview production build locally
-npm run lint       # Run ESLint
-npm run format     # Format all files with Prettier
-```
+| Script | Description |
+|---|---|
+| `npm run dev` | Start development server with HMR on port 3000 |
+| `npm run build` | Production build (outputs to `.output/`) |
+| `npm run build:dev` | Development build |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint across the project |
+| `npm run format` | Format all files with Prettier |
 
 ---
 
 ## Project Structure
 
 ```
-kenforest/
+Kenforest/
 ├── public/
-│   ├── Logo.png          # Brand logo
-│   └── Favicon.png       # Browser favicon
+│   ├── Logo.png              # Brand logo (served at /Logo.png)
+│   └── Favicon.png           # Browser favicon
 ├── src/
-│   ├── assets/           # Static images (avocados, packhouse, etc.)
+│   ├── assets/               # Static images (orchard, packhouse, products, etc.)
 │   ├── components/
-│   │   ├── site/         # SiteHeader, SiteFooter, PageShell, PageHero
-│   │   └── ui/           # Radix/shadcn UI primitives
-│   ├── hooks/            # useIsMobile
-│   ├── lib/              # utils, error handling, error page
-│   ├── routes/           # File-based routes (TanStack Router)
-│   │   ├── __root.tsx    # Root layout, fonts, meta, error boundary
-│   │   ├── index.tsx     # Home page
-│   │   ├── products.tsx  # Products page
-│   │   ├── consultation.tsx
-│   │   ├── about.tsx
-│   │   └── contact.tsx
-│   ├── router.tsx        # Router + QueryClient setup
-│   ├── server.ts         # SSR server entry (h3 error wrapper)
-│   ├── start.ts          # TanStack Start middleware
-│   └── styles.css        # Tailwind v4 theme + design tokens
+│   │   ├── site/             # SiteHeader, SiteFooter, PageShell, PageHero
+│   │   └── ui/               # Radix/shadcn UI primitives
+│   ├── hooks/                # useIsMobile (SSR-safe)
+│   ├── lib/                  # cn() utility, error capture, error page renderer
+│   ├── routes/               # File-based routes (TanStack Router)
+│   │   ├── __root.tsx        # Root layout, fonts, meta tags, error boundary
+│   │   ├── index.tsx         # Home page
+│   │   ├── products.tsx      # Products page
+│   │   ├── consultation.tsx  # Consultation & agronomy page
+│   │   ├── about.tsx         # About page
+│   │   └── contact.tsx       # Contact page
+│   ├── router.tsx            # Router + QueryClient configuration
+│   ├── routeTree.gen.ts      # Auto-generated route tree (do not edit)
+│   ├── server.ts             # SSR server entry with h3 error handling
+│   ├── start.ts              # TanStack Start middleware
+│   └── styles.css            # Tailwind v4 theme + design tokens (oklch)
+├── .gitignore
 ├── eslint.config.js
 ├── tsconfig.json
-├── vite.config.ts
+├── vercel.json               # Vercel deployment configuration
+├── vite.config.ts            # Vite + TanStack Start + Nitro (vercel preset)
 └── package.json
 ```
 
 ---
 
-## Environment
+## Deployment
 
-No environment variables are required to run the project locally. The contact form uses a `mailto:` link and requires no backend.
+The project is configured for deployment on **Vercel** using the Nitro `vercel` preset.
+
+### Deploy to Vercel
+
+1. Push your code to GitHub
+2. Go to [vercel.com/new](https://vercel.com/new) and import the repository
+3. Vercel will auto-detect settings from `vercel.json` — no manual configuration needed
+4. Set **Node.js version** to `22.x` in Project → Settings → General if not auto-detected
+5. Click **Deploy**
+
+### Build output
+
+| Path | Contents |
+|---|---|
+| `.output/public/` | Static assets (served by Vercel CDN) |
+| `.output/server/` | SSR function (runs on Vercel Edge/Node runtime) |
+
+### Environment variables
+
+No environment variables are required. The contact form uses a `mailto:` link with no backend dependency.
 
 ---
 
 ## Certifications
 
-Kenforest operates under the following standards:
+Kenforest operates under the following internationally recognised standards:
 
-- **GlobalG.A.P.** — Good Agricultural Practices, farm-level certified
-- **KEPHIS** — Kenya Plant Health Inspectorate export registration
-- **HCD** — Horticultural Crops Directorate licensed exporter
-- **GRASP** — GlobalG.A.P. Risk Assessment on Social Practice
+| Certification | Description |
+|---|---|
+| **GlobalG.A.P.** | Good Agricultural Practices — farm-level certified |
+| **KEPHIS** | Kenya Plant Health Inspectorate — export registration |
+| **HCD** | Horticultural Crops Directorate — licensed exporter |
+| **GRASP** | GlobalG.A.P. Risk Assessment on Social Practice |
 
 ---
 
@@ -132,11 +194,11 @@ Kenforest operates under the following standards:
 
 | | |
 |---|---|
-| Email | [kenforestlimited@gmail.com](mailto:kenforestlimited@gmail.com) |
-| Phone | [+254 711 281 829](tel:+254711281829) |
-| Address | P.O. Box 50729-00232, Kiambu, Kenya |
-| Website | [www.kenforestlimited.com](https://www.kenforestlimited.com) |
-| Hours | Mon – Fri · 08:00 – 17:00 EAT |
+| 📧 Email | [kenforestlimited@gmail.com](mailto:kenforestlimited@gmail.com) |
+| 📞 Phone | [+254 711 281 829](tel:+254711281829) |
+| 📍 Address | P.O. Box 50729-00232, Nairobi, Kenya |
+| 🌐 Website | [www.kenforestlimited.com](https://www.kenforestlimited.com) |
+| 🕐 Hours | Mon – Fri · 08:00 – 17:00 EAT |
 
 ---
 
@@ -144,4 +206,6 @@ Kenforest operates under the following standards:
 
 Copyright © 2024–present **Kenforest Limited**. All rights reserved.
 
-See [LICENSE](./LICENSE) for details.
+This codebase and all associated content are proprietary. Unauthorised copying, modification, distribution or use is strictly prohibited.
+
+See [LICENSE](./LICENSE) for full terms.
