@@ -51,7 +51,7 @@ function Contact() {
             </p>
             <ul className="mt-10 space-y-5">
               <ContactRow icon={<MapPin className="h-5 w-5" />} label="Address">
-                Kenforest Limited · P.O. Box 50729, 00232 · Nairobi, Kenya
+                Kenforest Limited · P.O. Box 50729-00232 · Nairobi, Kenya
               </ContactRow>
               <ContactRow icon={<Mail className="h-5 w-5" />} label="Email">
                 <a href="mailto:kenforestlimited@gmail.com" className="hover:text-primary">
@@ -96,74 +96,74 @@ function Contact() {
               </button>
             </div>
           ) : (
-          <form
-            aria-label="Contact enquiry form"
-            className="rounded-3xl border border-border bg-card p-8 shadow-sm md:p-10"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const data = new FormData(e.currentTarget);
-              const subject = encodeURIComponent(
-                `Website enquiry — ${data.get("subject") || data.get("name") || ""}`,
-              );
-              const body = encodeURIComponent(
-                `${data.get("message") ?? ""}\n\nProduct interest: ${data.get("interest") ?? ""}\nVolume: ${data.get("volume") ?? ""}\n\n— ${data.get("name") ?? ""}\n${data.get("company") ?? ""}\n${data.get("email") ?? ""}`,
-              );
-              window.location.href = `mailto:kenforestlimited@gmail.com?subject=${subject}&body=${body}`;
-              setSubmitted(true);
-            }}
-          >
-            <div className="grid gap-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Your name" name="name" required />
-                <Field label="Company" name="company" />
-              </div>
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Email" name="email" type="email" required />
-                <Field label="Country" name="country" />
-              </div>
-              <div>
-                <label
-                  htmlFor="contact-interest"
-                  className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            <form
+              aria-label="Contact enquiry form"
+              className="rounded-3xl border border-border bg-card p-8 shadow-sm md:p-10"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const data = new FormData(e.currentTarget);
+                const subject = encodeURIComponent(
+                  `Website enquiry — ${data.get("subject") || data.get("name") || ""}`,
+                );
+                const body = encodeURIComponent(
+                  `${data.get("message") ?? ""}\n\nProduct interest: ${data.get("interest") ?? ""}\nVolume: ${data.get("volume") ?? ""}\n\n— ${data.get("name") ?? ""}\n${data.get("company") ?? ""}\n${data.get("email") ?? ""}`,
+                );
+                window.location.href = `mailto:kenforestlimited@gmail.com?subject=${subject}&body=${body}`;
+                setSubmitted(true);
+              }}
+            >
+              <div className="grid gap-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="Your name" name="name" required />
+                  <Field label="Company" name="company" />
+                </div>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="Email" name="email" type="email" required />
+                  <Field label="Country" name="country" />
+                </div>
+                <div>
+                  <label
+                    htmlFor="contact-interest"
+                    className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                  >
+                    Product interest
+                  </label>
+                  <select
+                    id="contact-interest"
+                    name="interest"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  >
+                    <option>Fresh Hass avocados</option>
+                    <option>Cold-pressed avocado oil</option>
+                    <option>Agricultural consultation</option>
+                    <option>Private-label / OEM</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <Field label="Estimated volume (optional)" name="volume" placeholder="e.g. 2 x 40ft reefers / month" />
+                <div>
+                  <label
+                    htmlFor="contact-message"
+                    className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows={5}
+                    required
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
                 >
-                  Product interest
-                </label>
-                <select
-                  id="contact-interest"
-                  name="interest"
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
-                >
-                  <option>Fresh Hass avocados</option>
-                  <option>Cold-pressed avocado oil</option>
-                  <option>Agricultural consultation</option>
-                  <option>Private-label / OEM</option>
-                  <option>Other</option>
-                </select>
+                  Send enquiry <ArrowRight className="h-4 w-4" />
+                </button>
               </div>
-              <Field label="Estimated volume (optional)" name="volume" placeholder="e.g. 2 x 40ft reefers / month" />
-              <div>
-                <label
-                  htmlFor="contact-message"
-                  className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
-                />
-              </div>
-              <button
-                type="submit"
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
-              >
-                Send enquiry <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
-          </form>
+            </form>
           )}
         </div>
       </section>

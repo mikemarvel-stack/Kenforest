@@ -134,7 +134,7 @@ Kenforest operates under the following standards:
 |---|---|
 | Email | [kenforestlimited@gmail.com](mailto:kenforestlimited@gmail.com) |
 | Phone | [+254 711 281 829](tel:+254711281829) |
-| Address | P.O. Box 50729, 00232, Kiambu, Kenya |
+| Address | P.O. Box 50729-00232, Kiambu, Kenya |
 | Website | [www.kenforestlimited.com](https://www.kenforestlimited.com) |
 | Hours | Mon – Fri · 08:00 – 17:00 EAT |
 
