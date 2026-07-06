@@ -83,7 +83,7 @@ export function SiteFooter() {
           <img
             src={logoUrl}
             alt="Kenforest Limited"
-            className="h-20 w-auto brightness-0 invert"
+            className="h-20 w-auto"
           />
           <p className="mt-6 max-w-sm text-sm text-white/70">
             Nurturing Nature. Sustaining Future. Growing, processing and exporting
@@ -123,7 +123,7 @@ export function SiteFooter() {
             Contact
           </div>
           <ul className="space-y-3 text-sm text-white/80">
-            <li className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> P.O. Box 50729, 00232, Nairobi, Kenya</li>
+            <li className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> P.O. Box 50729-00232, Nairobi, Kenya</li>
             <li className="flex gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><a href="tel:+254711281829" className="hover:text-white">+254 711 281 829</a></li>
             <li className="flex gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><a href="mailto:kenforestlimited@gmail.com" className="hover:text-white">kenforestlimited@gmail.com</a></li>
             <li className="flex gap-2"><Globe className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><a href="https://www.kenforestlimited.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">www.kenforestlimited.com</a></li>
