@@ -8,17 +8,20 @@ import consultationImg from "@/assets/consultation.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Kenforest Limited — East African Avocado Growers & Exporters" },
+      { title: "About Kenforest Limited — East African Fresh Produce Growers & Exporters" },
       {
         name: "description",
         content:
-          "Kenforest Limited is an East Africa-based avocado grower, processor and exporter. Learn about our farms, our team and our sustainability commitments.",
+          "Kenforest Limited is an East Africa-based fresh produce grower, processor and exporter. Learn about our farms, our team, our sustainability commitments and what sets us apart.",
       },
-      { property: "og:title", content: "About — Kenforest Limited" },
-      { property: "og:description", content: "Meet the East African avocado export house nurturing nature and sustaining futures." },
-      { property: "og:url", content: "/about" },
+      { property: "og:title", content: "About Kenforest Limited — East African Produce Exporters" },
+      { property: "og:description", content: "Meet the East African fresh produce export house nurturing nature and sustaining futures across Kenya, Uganda and Tanzania." },
+      { property: "og:url", content: "https://www.kenforestlimited.com/about" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "About Kenforest Limited — East African Produce Exporters" },
+      { name: "twitter:description", content: "1,600+ contracted growers, 18+ export markets, GlobalG.A.P. certified. Learn about Kenforest Limited." },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://www.kenforestlimited.com/about" }],
   }),
   component: About,
 });

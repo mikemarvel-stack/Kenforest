@@ -33,13 +33,16 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Kenforest Limited grows, processes and exports GlobalG.A.P. certified fresh fruit — avocados, mangoes, passion fruit and macadamia — plus cold-pressed oils and agronomy consultation from East Africa.",
+          "Kenforest Limited grows, processes and exports GlobalG.A.P. certified fresh fruit — avocados, mangoes, passion fruit and macadamia — plus cold-pressed oils and agronomy consultation from East Africa to Europe, the Middle East and Asia.",
       },
-      { property: "og:title", content: "Kenforest Limited — East African Fresh Fruit & Agronomy" },
-      { property: "og:description", content: "Export-grade fresh fruit, cold-pressed oils and agricultural consultation from East Africa to the world." },
-      { property: "og:url", content: "/" },
+      { property: "og:title", content: "Kenforest Limited — Premium East African Fresh Fruit Export" },
+      { property: "og:description", content: "Export-grade avocados, mangoes, passion fruit, macadamia, cold-pressed oils and agronomy consultation from East Africa." },
+      { property: "og:url", content: "https://www.kenforestlimited.com/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Kenforest Limited — Premium East African Fresh Fruit Export" },
+      { name: "twitter:description", content: "Export-grade avocados, mangoes, passion fruit, macadamia and cold-pressed oils from East Africa." },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://www.kenforestlimited.com/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -47,9 +50,12 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Kenforest Limited",
+          url: "https://www.kenforestlimited.com",
+          logo: "https://www.kenforestlimited.com/Logo.png",
           slogan: "Nurturing Nature. Sustaining Future.",
           email: "kenforestlimited@gmail.com",
           telephone: "+254711281829",
+          sameAs: ["https://kenforest.vercel.app"],
           address: {
             "@type": "PostalAddress",
             streetAddress: "P.O. Box 50729-00232",

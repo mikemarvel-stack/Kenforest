@@ -8,17 +8,20 @@ import exportImg from "@/assets/export.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Kenforest Limited — Kenyan Hass Avocado Exporter" },
+      { title: "Contact Kenforest Limited — Fresh Produce Export Enquiries" },
       {
         name: "description",
         content:
-          "Contact Kenforest Limited for Hass avocado export enquiries, avocado oil purchase orders and agricultural consultation. Based in East Africa.",
+          "Contact Kenforest Limited for fresh fruit export enquiries (avocados, mangoes, passion fruit, macadamia), avocado oil orders and agronomy consultation. Based in Nairobi, Kenya.",
       },
       { property: "og:title", content: "Contact — Kenforest Limited" },
-      { property: "og:description", content: "Talk to our export desk about Hass avocados, oil and consultation." },
-      { property: "og:url", content: "/contact" },
+      { property: "og:description", content: "Talk to our export desk about fresh fruit, cold-pressed oil and agronomy consultation." },
+      { property: "og:url", content: "https://www.kenforestlimited.com/contact" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Contact Kenforest Limited" },
+      { name: "twitter:description", content: "Reach our export desk for fresh fruit, oil and agronomy enquiries. Based in Nairobi, Kenya." },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://www.kenforestlimited.com/contact" }],
   }),
   component: Contact,
 });
@@ -133,7 +136,10 @@ function Contact() {
                     name="interest"
                     className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
                   >
-                    <option>Fresh Hass avocados</option>
+                    <option>Fresh avocados</option>
+                    <option>Mangoes</option>
+                    <option>Passion fruit</option>
+                    <option>Macadamia nuts</option>
                     <option>Cold-pressed avocado oil</option>
                     <option>Agricultural consultation</option>
                     <option>Private-label / OEM</option>

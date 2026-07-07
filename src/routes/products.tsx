@@ -11,17 +11,20 @@ import heroImg from "@/assets/hero-orchard.jpg";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — Export Fresh Fruit & Cold-Pressed Oils | Kenforest" },
+      { title: "Products — Export Avocados, Mangoes, Passion Fruit & Macadamia | Kenforest" },
       {
         name: "description",
         content:
-          "Export-grade East African avocados, mangoes, passion fruit, macadamia nuts and cold-pressed avocado oil. Weekly shipments to Europe, the Middle East and Asia.",
+          "Export-grade East African avocados (Hass, Fuerte, Pinkerton, Reed, Jumbo), mangoes, passion fruit, macadamia nuts and cold-pressed avocado oil. Weekly shipments to Europe, the Middle East and Asia.",
       },
-      { property: "og:title", content: "Kenforest Products — Fresh Fruit & Oils" },
-      { property: "og:description", content: "Premium East African fresh fruit and cold-pressed avocado oil exported worldwide." },
-      { property: "og:url", content: "/products" },
+      { property: "og:title", content: "Kenforest Products — Fresh Fruit & Cold-Pressed Oil" },
+      { property: "og:description", content: "Premium East African avocados, mangoes, passion fruit, macadamia and cold-pressed avocado oil exported worldwide." },
+      { property: "og:url", content: "https://www.kenforestlimited.com/products" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Kenforest Products — Fresh Fruit & Cold-Pressed Oil" },
+      { name: "twitter:description", content: "East African avocados, mangoes, passion fruit, macadamia and cold-pressed oil exported to 18+ markets." },
     ],
-    links: [{ rel: "canonical", href: "/products" }],
+    links: [{ rel: "canonical", href: "https://www.kenforestlimited.com/products" }],
   }),
   component: Products,
 });

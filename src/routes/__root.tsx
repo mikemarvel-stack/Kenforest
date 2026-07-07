@@ -89,24 +89,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Kenforest Limited is a Kenya-based sustainable agriculture company empowering farmers, restoring soils, and building resilient food systems across East Africa.",
+          "Kenforest Limited grows, processes and exports GlobalG.A.P. certified fresh fruit — avocados, mangoes, passion fruit and macadamia — plus cold-pressed avocado oil and agronomy consultation from East Africa.",
       },
       { name: "author", content: "Kenforest Limited" },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+      { name: "theme-color", content: "#1a3a2a" },
+      // Open Graph
+      { property: "og:site_name", content: "Kenforest Limited" },
       { property: "og:title", content: "Kenforest Limited — Nurturing Nature. Sustaining Future." },
-      {
-        property: "og:description",
-        content:
-          "Sustainable agriculture, agroforestry and farmer empowerment across Kenya and East Africa.",
-      },
+      { property: "og:description", content: "Premium East African fresh fruit export — avocados, mangoes, passion fruit & macadamia — plus cold-pressed oil and agronomy consultation." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.kenforestlimited.com" },
+      { property: "og:image", content: "https://www.kenforestlimited.com/Logo.png" },
+      { property: "og:image:alt", content: "Kenforest Limited — East African Fresh Produce Exporter" },
+      { property: "og:locale", content: "en_GB" },
+      // Twitter / X
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Kenforest Limited — East African Fresh Produce Export" },
+      { name: "twitter:description", content: "Premium avocados, mangoes, passion fruit & macadamia exported from East Africa to the world." },
+      { name: "twitter:image", content: "https://www.kenforestlimited.com/Logo.png" },
+      // Geo
+      { name: "geo.region", content: "KE" },
+      { name: "geo.placename", content: "Nairobi, Kenya" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/Favicon.png", type: "image/png" },
+      { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
     ],
   }),
   shellComponent: RootShell,

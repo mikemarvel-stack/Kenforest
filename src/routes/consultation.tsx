@@ -18,17 +18,20 @@ import orchardImg from "@/assets/hero-orchard.jpg";
 export const Route = createFileRoute("/consultation")({
   head: () => ({
     meta: [
-      { title: "Agricultural Consultation — Avocado Orchards & Export Readiness | Kenforest" },
+      { title: "Agricultural Consultation — Orchard Establishment & Export Readiness | Kenforest" },
       {
         name: "description",
         content:
-          "Kenforest's agronomists help East African growers plan avocado orchards across all varieties, achieve GlobalG.A.P. certification and enter international export markets.",
+          "Kenforest's agronomists help East African growers plan orchards, achieve GlobalG.A.P. certification and enter international export markets. Avocados, mangoes, passion fruit and macadamia.",
       },
-      { property: "og:title", content: "Avocado Consultation — Kenforest Limited" },
-      { property: "og:description", content: "Orchard planning, GlobalG.A.P. readiness and export market entry for avocado growers across East Africa." },
-      { property: "og:url", content: "/consultation" },
+      { property: "og:title", content: "Agronomy Consultation — Kenforest Limited" },
+      { property: "og:description", content: "Orchard planning, GlobalG.A.P. readiness and export market entry for growers across East Africa." },
+      { property: "og:url", content: "https://www.kenforestlimited.com/consultation" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Agronomy Consultation — Kenforest Limited" },
+      { name: "twitter:description", content: "Orchard establishment, GlobalG.A.P. readiness and export market entry for East African growers." },
     ],
-    links: [{ rel: "canonical", href: "/consultation" }],
+    links: [{ rel: "canonical", href: "https://www.kenforestlimited.com/consultation" }],
   }),
   component: Consultation,
 });
